@@ -2,10 +2,14 @@ body {
     font-size: 16px;
 }
 
-body {
-    font-size: 16px;
+input {
+    border: none;
+    border-bottom: 0.0625rem solid green;
+    margin-bottom: 0.3125rem;
+    background-color: aliceblue;
+    padding: 0.3125rem;
 }
 
 .validation-error {
-    border: 1px solid red;
+    border: 0.0625rem solid red;
 }
