@@ -1,12 +1,14 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Login.css";
+import "./Register.css";
 
-function Login() {
+function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const nameRef = useRef(null);
 
   function validate() {
     if (email === "") {
@@ -19,11 +21,23 @@ function Login() {
     } else {
       passwordRef.current.classList.remove("validation-error");
     }
+    if (name === "") {
+      nameRef.current.classList.add("validation-error");
+    } else {
+      nameRef.current.classList.remove("validation-error");
+    }
   }
 
   return (
-    <div className="login-box">
-      <h1>Zaloguj się</h1>
+    <div className="register-box">
+      <h1>Zarejestruj się</h1>
+      <input
+        type="text"
+        placeholder="Imię"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        ref={nameRef}
+      />
       <input
         type="text"
         placeholder="Email"
@@ -39,9 +53,9 @@ function Login() {
         ref={passwordRef}
       />
       <p>
-        Nie masz konta? <Link to="/register">Zarejestruj się</Link>
+        Masz już konto? <Link to="/login">Zaloguj się</Link>
       </p>
-      <button onClick={validate}>Zaloguj się</button>
+      <button onClick={validate}>Zarejestruj się</button>
       <p>
         <Link to="/">Kontynuuj bez rejestracji</Link>
       </p>
@@ -49,4 +63,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
