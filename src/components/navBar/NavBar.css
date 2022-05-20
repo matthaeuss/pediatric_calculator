@@ -1,0 +1,7 @@
+.navbar {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.625rem;
+    background-color: lightblue;
+}
