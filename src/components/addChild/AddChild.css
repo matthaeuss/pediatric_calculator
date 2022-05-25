@@ -15,7 +15,10 @@
 }
 
 .child-avatar {
+    height: 100%;
     max-height: 6.25rem;
+    width: 100%;
+    max-width: 6.25rem;
 }
 
 .child-container {
