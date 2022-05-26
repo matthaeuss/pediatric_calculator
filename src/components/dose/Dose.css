@@ -1,0 +1,9 @@
+.calendar-mask {
+    overflow-y: auto;
+    width: 100%;
+}
+
+.calendar {
+    display: flex;
+    width: 200%;
+}

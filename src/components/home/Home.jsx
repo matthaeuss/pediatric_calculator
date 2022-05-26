@@ -1,18 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ChildrenNav from "../childrenNav/ChildrenNav";
 import DrugsFinder from "../drugsFinder/DrugsFinder";
 import NavBar from "../navBar/NavBar";
 
 import "./Home.css";
 
-function Home() {
+function Home({ children, activeChild, setActiveChild }) {
   return (
     <>
       <NavBar />
       <div className="home-card">
-        <ChildrenNav />
-        <DrugsFinder />
+        <ChildrenNav
+          children={children}
+          activeChild={activeChild}
+          setActiveChild={setActiveChild}
+          showUI={true}
+        />
+        <DrugsFinder activeChild={activeChild} />
       </div>
     </>
   );

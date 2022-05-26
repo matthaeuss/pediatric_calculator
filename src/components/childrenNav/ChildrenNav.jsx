@@ -1,28 +1,10 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import avatar from "./../../images/boy.png";
 import addIcon from "./../../images/addIcon.svg";
 
 import "./ChildrenNav.css";
 
-const children = [
-  {
-    id: 1,
-    name: "Janusz",
-  },
-  {
-    id: 2,
-    name: "Karyna",
-  },
-  {
-    id: 3,
-    name: "Grażyna",
-  },
-];
-
-function ChildrenNav() {
-  const [activeChild, setActiveChild] = useState(1);
-
+function ChildrenNav({ children, activeChild, setActiveChild, showUI }) {
   return (
     <>
       <div className="child-wrapper">
@@ -44,19 +26,22 @@ function ChildrenNav() {
             <p>{name}</p>
           </div>
         ))}
-
-        <Link to="/addChild">
-          <img src={addIcon} alt="addIcon" className="add_icon" />
-        </Link>
+        {showUI && (
+          <Link to="/addChild">
+            <img src={addIcon} alt="addIcon" className="add_icon" />
+          </Link>
+        )}
       </div>
-      <div>
-        <Link to="/addChild" className="btn">
-          Edytuj
-        </Link>
-        <Link to="/" className="btn">
-          Historia dawkowania
-        </Link>
-      </div>
+      {showUI && (
+        <div>
+          <Link to="/addChild" className="btn">
+            Edytuj
+          </Link>
+          <Link to="/" className="btn">
+            Historia dawkowania
+          </Link>
+        </div>
+      )}
     </>
   );
 }

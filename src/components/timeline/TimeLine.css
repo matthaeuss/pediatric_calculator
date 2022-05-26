@@ -1,0 +1,12 @@
+.timeline-line,
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.timeline-line span,
+.timeline-header span {
+    display: inline-block;
+    width: 100%;
+}
